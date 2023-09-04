@@ -59,7 +59,7 @@ describe('To-do list functionality', () => {
     expect(todoList.tasks).toEqual([taskToKeep])
   })
 
-  it('should return the correct number of total tasks in a to-do list', () => {
+  it('should count the correct number of total tasks in a to-do list', () => {
     const todoList = new TodoList()
     todoList.addTask(new Task('1'))
     todoList.addTask(new Task('2'))
@@ -70,7 +70,7 @@ describe('To-do list functionality', () => {
     expect(tasksCount).toBe(3)
   })
 
-  it('should return the correct number of incomplete tasks in a to-do list', () => {
+  it('should count the correct number of incomplete tasks in a to-do list', () => {
     const todoList = new TodoList()
     todoList.addTask(new Task('1', false))
     todoList.addTask(new Task('2', false))
@@ -81,7 +81,7 @@ describe('To-do list functionality', () => {
     expect(incompleteTasksCount).toBe(2)
   })
 
-  it('should return the correct number of complete tasks in a to-do list', () => {
+  it('should count the correct number of complete tasks in a to-do list', () => {
     const todoList = new TodoList()
     todoList.addTask(new Task('1', true))
     todoList.addTask(new Task('2', false))
