@@ -102,15 +102,15 @@ input[type=submit]:hover {
   align-items: center;
   list-style-type: none;
   border-radius: 5px;
+  padding-inline: 4px;
 }
 
-#todo-list li:hover,
-#todo-list li:has(*:focus-visible) {
+#todo-list li:hover, #todo-list li:has(*:focus-visible) {
   background-color: rgba(118, 202, 228, 0.15)
 }
 
 #todo-list label {
-  padding: 4px;
+  padding-block: 8px;
   user-select: none;
   flex: 1;
 }
