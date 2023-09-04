@@ -2,6 +2,7 @@ import webpack from 'webpack'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -18,17 +19,18 @@ const config = {
     resolve: {
         extensions: ['.js', '.css']
     },
+    plugins: [
+        new HtmlWebpackPlugin({ template: './index.html', }),
+        new MiniCssExtractPlugin({ filename: '[name].css' })
+    ],
     module: {
         rules: [
             {
                 test: /\.css$/,
-                use: ['style-loader', 'css-loader']
+                use: [{ loader: MiniCssExtractPlugin.loader }, 'css-loader']
             }
         ]
     },
-    plugins: [new HtmlWebpackPlugin({
-        template: './index.html'
-    })]
 }
 
 export default config
