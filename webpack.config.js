@@ -20,7 +20,7 @@ const config = {
         extensions: ['.js', '.css']
     },
     plugins: [
-        new HtmlWebpackPlugin({ template: './index.html', }),
+        new HtmlWebpackPlugin({ template: './index.html', minify: { removeRedundantAttributes: false } }),
         new MiniCssExtractPlugin({ filename: '[name].css' })
     ],
     module: {
