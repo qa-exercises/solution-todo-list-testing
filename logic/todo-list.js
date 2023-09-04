@@ -17,7 +17,9 @@ export class TodoList {
   }
 
   addTask(taskToAdd) {
-    this.tasks.push(taskToAdd)
+    if (taskToAdd.name) {
+      this.tasks.push(taskToAdd)
+    }
   }
 
   deleteTask(taskToRemove) {
@@ -28,18 +30,24 @@ export class TodoList {
   }
   
   countTotalTasks() {
-    return -1
+    return this.tasks.length
   }
 
   countIncompleteTasks() {
-    return -1
+    return this.tasks
+      .filter((task) => !task.isComplete)
+      .length
   }
 
   countCompleteTasks() {
-    return -1
+    return this.tasks
+      .filter((task) => task.isComplete)
+      .length
   }
 
   checkIsEntireListComplete() {
-    return -1
+    const listHasTasks = this.tasks.length > 0
+    const allTasksAreCompleted = this.countTotalTasks() === this.countCompleteTasks()
+    return listHasTasks && allTasksAreCompleted
   }
 }
