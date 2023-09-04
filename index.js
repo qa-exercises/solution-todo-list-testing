@@ -1,4 +1,5 @@
 import { TodoList, Task } from './logic/todo-list.js'
+import './styles.css'
 
 let tasksList = new TodoList('To-do')
 
